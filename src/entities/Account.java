@@ -4,12 +4,17 @@ public class Account {
 	
 	public Integer number;
 	public String holder;
-	public Double balance;
+	public double balance;
 	
-	public Account(Integer number, String holder, Double balance) {
+	public Account(Integer number, String holder, double balance) {
 		this.number = number;
 		this.holder = holder;
 		this.balance = balance;
+	}
+	
+	public Account(Integer number, String holder) {
+		this.number = number;
+		this.holder = holder;
 	}
 
 	public Integer getNumber() {
@@ -32,7 +37,7 @@ public class Account {
 		return balance;
 	}
 
-	public void setBalance(Double balance) {
+	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 	
@@ -41,6 +46,11 @@ public class Account {
 	}
 	
 	public void withdraw(double amount) {
-		balance -= amount;
+		balance -= amount + 5;
+	}
+
+	@Override
+	public String toString() {
+		return "Account: " + number + ", Holder: " + holder + ", balance: R$" + balance;
 	}
 }
